@@ -1,0 +1,32 @@
+{
+  "name": "web-palace-agent",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest run",
+    "palace:register": "tsx scripts/register-web-palace.ts"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "gsap": "^3.13.0",
+    "lucide-react": "^0.468.0",
+    "motion": "^12.42.2",
+    "next": "^15.5.21",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.2",
+    "eslint": "^9.16.0",
+    "eslint-config-next": "^15.0.4",
+    "tsx": "^4.20.6",
+    "typescript": "^5.7.2",
+    "vitest": "^4.1.10"
+  }
+}

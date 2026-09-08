@@ -1,0 +1,39 @@
+project_name: my-web-palace
+subject: Replace with the subject to teach
+audience: Replace with the intended learner
+objective: Replace with the capability the learner should gain
+repository: ./workspace
+source_paths: []
+maximum_build_iterations: 3
+# Number of redesign attempts allowed after the initial architecture.
+maximum_architecture_revisions: 1
+maximum_model_calls: 12
+# Optional workflow guard. Keep pricing below current for every configured role.
+maximum_estimated_cost_usd: 5.00
+require_build_approval: true
+command_timeout_seconds: 120
+maximum_command_output_characters: 4000
+# Each role can use any LangChain-supported provider integration.
+models:
+  architect:
+    provider: openai
+    model: gpt-5.6-terra
+    input_cost_per_million: 2.00
+    cached_input_cost_per_million: 0.20
+    output_cost_per_million: 12.00
+  builder:
+    provider: openai
+    model: gpt-5.6-terra
+    input_cost_per_million: 2.00
+    cached_input_cost_per_million: 0.20
+    output_cost_per_million: 12.00
+  reviewer:
+    provider: openai
+    model: gpt-5.6-terra
+    input_cost_per_million: 2.00
+    cached_input_cost_per_million: 0.20
+    output_cost_per_million: 12.00
+# Commands are denied unless their exact strings appear here.
+allowed_commands:
+  - npm.cmd test
+  - npm.cmd run build

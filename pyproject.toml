@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "web-palace-agent"
+version = "0.2.0"
+description = "A bounded Architect-Builder-Reviewer agentic workflow"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115",
+  "langchain>=1.0",
+  "langchain-openai>=1.0",
+  "langgraph>=1.0",
+  "langgraph-checkpoint-sqlite>=3.0",
+  "pydantic>=2.10",
+  "pypdf>=5.0",
+  "python-docx>=1.1",
+  "python-multipart>=0.0.20",
+  "PyYAML>=6.0",
+  "uvicorn[standard]>=0.34",
+]
+
+[project.optional-dependencies]
+anthropic = ["langchain-anthropic>=1.0"]
+deepseek = ["langchain-deepseek>=1.0"]
+dev = ["httpx>=0.28", "pytest>=8.3", "pytest-asyncio>=0.25", "pytest-cov>=6.0"]
+
+[project.scripts]
+web-palace-agent = "web_palace_agent.cli:main"
+web-palace-api = "web_palace_agent.api:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/web_palace_agent"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

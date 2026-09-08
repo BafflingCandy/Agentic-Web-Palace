@@ -1,0 +1,67 @@
+/* The creator stays focused on one task; accepted sites live in the main brain. */
+.workspace-grid {
+  grid-template-columns: minmax(0, 820px);
+  justify-content: center;
+}
+
+.run-panel {
+  position: static;
+}
+
+.execution-mode {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.execution-mode legend {
+  margin-bottom: 0.75rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.78rem;
+}
+
+.execution-mode label {
+  grid-template-columns: 18px 1fr;
+  align-items: start;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  cursor: pointer;
+}
+
+.execution-mode label.selected {
+  border-color: rgba(255, 255, 255, 0.62);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.execution-mode input {
+  width: 16px;
+  min-height: auto;
+  height: 16px;
+  margin-top: 0.15rem;
+}
+
+.execution-mode span {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.execution-mode strong {
+  color: #fff;
+  font-size: 0.74rem;
+}
+
+.execution-mode small {
+  color: var(--dim);
+  font-size: 0.64rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 680px) {
+  .execution-mode {
+    grid-template-columns: 1fr;
+  }
+}
