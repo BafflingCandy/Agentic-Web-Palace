@@ -1,12 +1,6 @@
 # Web Palace Agent
 
-An executable, bounded **Architect → Builder → Reviewer** LangChain/LangGraph workflow derived from the Web Palace Codex skills.
-
-This project deliberately separates two responsibilities:
-
-- The language-model agents make semantic judgments and return typed results.
-- LangGraph owns routing, feedback loops, checkpoints, iteration limits, and stopping conditions.
-- Deterministic Python owns filesystem and command boundaries.
+An executable, bounded **Architect → Builder → Reviewer** LangChain/LangGraph workflow to turn your subjects into websites.
 
 ## Architecture
 
@@ -27,10 +21,6 @@ LangGraph -------> SQLite checkpoints + RunStore evidence
             +-- REJECT_AND_REARCHITECT ----> Architect
             +-- REVIEW_BLOCKED ------------> Human
 ```
-
-## Why this is agentic
-
-The workflow does more than call three prompts. It observes persistent workspace state, lets specialists reason about their bounded roles, acts through controlled file and command interfaces, evaluates results, feeds review findings into the next iteration, and stops according to explicit policies.
 
 ## Set up
 
@@ -69,7 +59,7 @@ python -m pip install -e ".[deepseek]"
 
 ## Run the agents
 
-Create an API key with the provider selected in the project YAML. Codex does not expose a reusable “Codex API key”; ChatGPT/Codex product access and API billing are separate. Store keys only in environment variables or a secret manager:
+Create an API key with the provider selected in the project YAML. Store keys only in environment variables or a secret manager:
 
 ```powershell
 $env:OPENAI_API_KEY = "your-key"
